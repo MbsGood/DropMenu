@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/lly"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_business"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawablePadding="7dp"
+            android:drawableRight="@mipmap/icon_drop_down"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:onClick="goDrop"
+            android:singleLine="true"
+            android:text="test"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/lly"
+        android:background="@color/line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_line">
+        <View
+            android:id="@+id/maskView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a0000000"
+            android:visibility="gone"/>
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/lv_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+</RelativeLayout>

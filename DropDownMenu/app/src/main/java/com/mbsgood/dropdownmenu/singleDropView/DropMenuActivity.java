@@ -1,4 +1,4 @@
-package com.mbsgood.dropdownmenu;
+package com.mbsgood.dropdownmenu.singleDropView;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.mbsgood.dropdownmenu.R;
 import com.mbsgood.dropdownmenu.adapter.DropMenuAdapter;
-import com.mbsgood.dropdownmenu.singleDropView.DropDownMenu;
 
 import java.util.ArrayList;
 
