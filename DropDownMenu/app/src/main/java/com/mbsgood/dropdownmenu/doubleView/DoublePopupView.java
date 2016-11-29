@@ -24,7 +24,7 @@ public class DoublePopupView extends LinearLayout implements AdapterView.OnItemC
     private CommonAdapter leftAdapter;
     private CommonAdapter rightAdapter;
     private LinkedHashMap<String, List<String>> mData;
-    private OnBusinessSelectListener mOnBusinessSelectListener;
+    private OnSelectListener mOnSelectListener;
 
     public DoublePopupView(Context context) {
         this(context, null);
@@ -62,8 +62,8 @@ public class DoublePopupView extends LinearLayout implements AdapterView.OnItemC
         listViewRight.setAdapter(rightAdapter);
     }
 
-    public void setOnSelectListener(OnBusinessSelectListener mOnBusinessSelectListener) {
-        this.mOnBusinessSelectListener = mOnBusinessSelectListener;
+    public void setOnSelectListener(OnSelectListener mOnBusinessSelectListener) {
+        this.mOnSelectListener = mOnBusinessSelectListener;
     }
 
     @Override
@@ -72,24 +72,24 @@ public class DoublePopupView extends LinearLayout implements AdapterView.OnItemC
             if (leftAdapter.getSelectItem() == position) return;
             leftAdapter.setSelectPosition(position);
             rightAdapter.updateData(mData.get(leftAdapter.getSelectData()));
-            if (mOnBusinessSelectListener != null && position == 0) {
-                mOnBusinessSelectListener.onBusinessSelect("", "");
+            if (mOnSelectListener != null && position == 0) {
+                mOnSelectListener.onSelect("", "");
             }
         } else if (parent.getId() == R.id.lv_sort_detail) {
             rightAdapter.setSelectPosition(position);
-            if (mOnBusinessSelectListener != null) {
+            if (mOnSelectListener != null) {
                 String zone = rightAdapter.getSelectData();
                 if (TextUtils.equals(zone, "全部")) {
-                    mOnBusinessSelectListener.onBusinessSelect(leftAdapter.getSelectData(), "");
+                    mOnSelectListener.onSelect(leftAdapter.getSelectData(), "");
                 } else {
-                    mOnBusinessSelectListener.onBusinessSelect(leftAdapter.getSelectData(), zone);
+                    mOnSelectListener.onSelect(leftAdapter.getSelectData(), zone);
                 }
             }
         }
     }
 
-    public interface OnBusinessSelectListener {
-        void onBusinessSelect(String area, String zone);
+    public interface OnSelectListener {
+        void onSelect(String area, String zone);
     }
 
 }

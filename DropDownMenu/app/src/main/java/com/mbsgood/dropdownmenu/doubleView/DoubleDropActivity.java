@@ -20,7 +20,7 @@ import java.util.List;
 * Time: 15:30 
 * From VCard
 */
-public class DoubleDropActivity extends AppCompatActivity implements DoublePopupView.OnBusinessSelectListener {
+public class DoubleDropActivity extends AppCompatActivity implements DoublePopupView.OnSelectListener {
     FrameLayout content;
     View maskView;
 
@@ -57,7 +57,7 @@ public class DoubleDropActivity extends AppCompatActivity implements DoublePopup
     }
 
     @Override
-    public void onBusinessSelect(String area, String zone) {
+    public void onSelect(String area, String zone) {
         Toast.makeText(this, area + "----------<" + zone, Toast.LENGTH_SHORT).show();
         popView(View.GONE,R.anim.slide_top_out);
     }
