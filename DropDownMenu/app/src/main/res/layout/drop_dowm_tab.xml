@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/tv_right_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="6dp"
+        android:drawableRight="@mipmap/icon_drop_down"
+        android:gravity="right"
+        android:singleLine="true"
+        android:textColor="@color/text_gray"
+        android:textSize="15sp"
+        tools:text="rrrrrrrrrrrrrrrrrrr" />
+
+    <TextView
+        android:id="@+id/tv_left_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/tv_right_tip"
+        android:drawablePadding="6dp"
+        android:singleLine="true"
+        android:textColor="@color/text_gray"
+        android:textSize="15sp"
+        tools:drawableLeft="@mipmap/shop_icon"
+        tools:text="lllllllllllllll" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/line" />
+
+</RelativeLayout>
